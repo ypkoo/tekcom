@@ -44,12 +44,12 @@ THIRD_PARTY_APPS = [
 ]
 
 EDITOR_APPS = [
-
+    'django_summernote',
 ]
 
 LOCAL_APPS = [
     'board',
-    'user',
+    # 'user',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + EDITOR_APPS + LOCAL_APPS
@@ -114,8 +114,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'user.User'
+''' added by ypkoo '''
+# AUTH_USER_MODEL = 'user.User'
 
+# for summernote
+X_FRAME_OPTIONS = 'SAMEORIGIN' 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
