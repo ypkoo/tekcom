@@ -1,9 +1,8 @@
-from django.conf import settings
-from django.conf.urls import url, include
-from django.conf.urls.static import static
-from django.contrib import admin
-from .views import index
+from django.urls import path
+from board import views
 
 urlpatterns = [
-    url('new', index, name='index'),
+    path('new/', views.index, name='index'),
+    path('articles/', views.ArticleList.as_view()),
+    path('articles/<int:pk>/', views.ArticleDetail.as_view()),
 ]

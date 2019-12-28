@@ -11,8 +11,10 @@ class ArticleEditForm(forms.ModelForm):
         )
         model = Article
         exclude = (
-            'created_at', 'modified_at',
-            'view_count', 'comment_count',
+            'created_at', 
+            'modified_at',
+            'view_count', 
+            # 'comment_count',
         )
         widgets = {
             # 'subject': forms.TextInput(
