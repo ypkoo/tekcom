@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('board/', include('board.urls')),
+    path('api/v1/board/', include('board.urls')),
 ]
 
 # for summernote

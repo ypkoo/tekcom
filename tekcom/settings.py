@@ -49,7 +49,7 @@ EDITOR_APPS = [
 
 LOCAL_APPS = [
     'board',
-    # 'user',
+    'user',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + EDITOR_APPS + LOCAL_APPS
@@ -115,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 ''' added by ypkoo '''
-# AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'user.User'
 
 # for summernote
 X_FRAME_OPTIONS = 'SAMEORIGIN' 

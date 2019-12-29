@@ -1,4 +1,6 @@
 from django.db import models
+# from user.models import User
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -9,7 +11,7 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now_add=True)
 
-    # author = None
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.TextField(max_length=255)
     content = models.TextField()
     view_count = models.IntegerField(default=0)
