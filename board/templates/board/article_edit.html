@@ -24,12 +24,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <h1>django-summernote playground</h1>
-    </div>
-    <div class="row">
-      <p>Theme: {{ theme }}</p>
-    </div>
+
     {% if passed %}
     <div class="row">
       <div class="alert alert-primary" role="alert">
@@ -38,9 +33,12 @@
     </div>
     {% endif %}
     <div class="row">
-      <form enctype="multipart/form-data" method="post">
-        {% csrf_token %}
-        {{ form.as_ul }}
+      <form action="/api/v1/board/articles/" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+          {% csrf_token %}
+          {{ form.as_ul }}
+        </div>
+        
         <!-- <div class="input_content">
           {{ form.content }}
       </div> -->

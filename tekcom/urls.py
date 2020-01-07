@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/board/', include('board.urls')),
+    path('api/v1/users/', include('user.urls')),
 ]
 
 # for summernote
@@ -29,3 +30,7 @@ if settings.DEBUG:
 
 if 'django_summernote' in settings.INSTALLED_APPS:
     urlpatterns.append(path('summernote/', include('django_summernote.urls')))
+
+urlpatterns += [
+    path('api-auth/', include('rest_framework.urls')),
+]
